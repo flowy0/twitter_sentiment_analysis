@@ -1,23 +1,10 @@
 import tweepy
 from dotenv import dotenv_values
-import json
-import os
 import logging
+import utils
 
 LOGGER = logging.getLogger(__name__)
 logging.basicConfig(level='INFO')
-
-
-def export_json(file_path):
-    with open(file_path, 'w') as outfile:
-        json.dump(tweets, outfile)
-        LOGGER.info(f"file saved to {file_path}")
-
-
-def create_dir(folder):
-    if not os.path.exists(folder):
-        os.mkdir(folder)
-        LOGGER.info(f"dir {folder} created")
 
 
 def get_public_tweets(config):
@@ -48,5 +35,5 @@ if __name__ == '__main__':
 
     env_vars = dotenv_values(".env")
     tweets = get_public_tweets(config=env_vars)
-    create_dir(folder=OUTPUT_DIR)
-    export_json(file_path=OUTPUT_FILE)
+    utils.create_dir(folder=OUTPUT_DIR)
+    utils.export_json(input_dict=tweets, file_path=OUTPUT_FILE)
