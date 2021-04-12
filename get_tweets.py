@@ -48,4 +48,3 @@ if __name__ == '__main__':
     for user in list_usernames:
         get_tweets_from_user(username=user, output_dir=OUTPUT_DIR)
 
-
