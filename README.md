@@ -20,6 +20,9 @@ python -m pip install --upgrade pip
 pip install python-twitter
 pip install tweepy
 pip install python-dotenv
+
+# for the second part - we use pytorch for pre-processing
+pip install torch torchtext
 ```
 
 ## Get your twitter developer account setup 
@@ -55,6 +58,22 @@ python test_tweepy.py
 ```
 
 
+#### Our Pipeline
+
+We get a list of tweets using 
+- get_tweets.py 
+
+Process the tweets
+ - preprocess_tweets.py (WIP)
+
+Prepare our model 
+ - model.py (WIP)
+
+
+
 
 ### References:
-https://towardsdatascience.com/twitter-sentiment-analysis-in-python-1bafebe0b566
+- https://towardsdatascience.com/twitter-sentiment-analysis-in-python-1bafebe0b566
+- https://medium.com/@swenushika/extracting-twitter-data-using-tweepy-a066d6e19be
+
+- https://galhever.medium.com/sentiment-analysis-with-pytorch-part-1-data-preprocessing-a51c80cc15fb

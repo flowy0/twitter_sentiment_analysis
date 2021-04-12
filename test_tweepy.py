@@ -19,7 +19,7 @@ def get_public_tweets(config, ):
     auth.set_access_token(access_token_key, access_token_secret)
     api = tweepy.API(auth)
 
-    filename='data/test_tweets.csv'
+    filename='data/csv/test_tweets.csv'
 
     public_tweets = api.home_timeline()
     LOGGER.info(f"data type: {type(public_tweets)}")

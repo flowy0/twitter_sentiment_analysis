@@ -64,8 +64,8 @@ def get_tweets_from_user(username, output_dir, config_key=dotenv_values(), tweet
 if __name__ == '__main__':
     OUTPUT_DIR = 'data'
 
-    # list_usernames = ['Microsoft', 'amazon', 'googledevs', 'googlenews', 'ChannelNewsAsia']
-    list_usernames = ['ChannelNewsAsia']
+    list_usernames = ['Microsoft', 'amazon', 'googledevs', 'googlenews', 'ChannelNewsAsia']
+    # list_usernames = ['ChannelNewsAsia']
 
     for user in list_usernames:
         get_tweets_from_user(username=user, output_dir=OUTPUT_DIR)
