@@ -6,17 +6,13 @@ Using Conda
 ```
 conda create -n twitter python=3.9
 conda activate twitter
-```
-
-Using pyenv
-```
-pyenv virtualenv 3.9.4 twitter
-pyenv activate twitter
-python -m pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
 ## Install the packages
 ```
+# pip install -r requirements.txt
+or 
 pip install python-twitter
 pip install tweepy
 pip install python-dotenv
