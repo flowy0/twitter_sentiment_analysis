@@ -44,8 +44,8 @@ def get_tweets_from_user(username, output_dir, config_key=dotenv_values(), tweet
     # output_json = f"{output_dir}/json/tweets_{username}.json"
     # utils.export_json(tweets_dict, output_json)
 
-    utils.create_dir(f"{output_dir}/csv")
-    output_csv = f"{output_dir}/csv/tweets_{username}.csv"
+    # utils.create_dir(f"{output_dir}/csv")
+    output_csv = f"{output_dir}/tweets_{username}.csv"
 
     #export csv
     outtweets = [[tweet.id_str, tweet.created_at, tweet.text] for tweet in return_tweets]
@@ -62,11 +62,14 @@ def get_tweets_from_user(username, output_dir, config_key=dotenv_values(), tweet
 
 
 if __name__ == '__main__':
-    OUTPUT_DIR = 'data'
-
-    list_usernames = ['Microsoft', 'amazon', 'googledevs', 'googlenews', 'ChannelNewsAsia']
-    # list_usernames = ['ChannelNewsAsia']
+    # OUTPUT_DATA = 'data'
+    OUTPUT_TWEETS ='data/csv'
+    utils.create_dir(OUTPUT_TWEETS)
+    # OUTPUT_FILENAME='raw/all_tweets.csv'
+    list_usernames = ['Microsoft', 'amazon', 'Google',  'Facebook']
 
     for user in list_usernames:
-        get_tweets_from_user(username=user, output_dir=OUTPUT_DIR)
+        get_tweets_from_user(username=user, output_dir=OUTPUT_TWEETS)
+    
+
 
